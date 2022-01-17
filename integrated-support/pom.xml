@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>microservice-framework</artifactId>
+        <groupId>org.microservice</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>integrated-support</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>integrated-nacos-client</module>
+        <module>integrated-openfeign</module>
+        <module>integrated-web</module>
+        <module>integrated-redis</module>
+        <module>integrated-mysql</module>
+        <module>integrated-gateway</module>
+        <module>integrated-redisson</module>
+        <module>integrated-xxljob</module>
+    </modules>
+
+</project>

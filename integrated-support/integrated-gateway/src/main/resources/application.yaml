@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    gateway:
+      # 有效
+      default-filters:
+        - name: Hystrix
+          args:
+            name: fallbackcmd
+            fallbackUri: forward:/hystrixFallbackHandle
+# 熔断配置
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            # 默认只有两秒  改成 5s
+            timeoutInMilliseconds: 50000
