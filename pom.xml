@@ -16,6 +16,7 @@
         <module>framework-core</module>
         <module>integrated-support</module>
         <module>framework-generator</module>
+        <module>example</module>
 
 
     </modules>

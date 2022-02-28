@@ -8,7 +8,8 @@ import reactor.core.publisher.Mono;
 import java.util.Objects;
 
 /**
- * TODO 没用？
+ * desc: redis限流配置
+ *
  * @author Rao
  * @Date 2021/11/06
  **/

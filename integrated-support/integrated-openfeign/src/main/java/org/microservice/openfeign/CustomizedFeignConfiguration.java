@@ -26,7 +26,6 @@ public class CustomizedFeignConfiguration {
     }
 
     /**
-     *
      * 定制的结果解析器 是否需要继承 相关的 Gzip解码器呢？
      */
     static class CustomizedFeignResultDecoder implements Decoder {

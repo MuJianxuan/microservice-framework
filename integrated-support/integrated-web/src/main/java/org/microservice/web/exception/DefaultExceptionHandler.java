@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * @Date 2021/11/09
  **/
 @Slf4j
-@Component
 @RestControllerAdvice(annotations = {RestController.class})
 public class DefaultExceptionHandler {
 
