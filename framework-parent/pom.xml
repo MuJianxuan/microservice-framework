@@ -61,7 +61,6 @@
         <hutool-all.version>5.5.9</hutool-all.version>
         <fastjson.version>1.2.78</fastjson.version>
         <lombok.version>1.18.10</lombok.version>
-        <hibernate-validator>6.0.9.Final</hibernate-validator>
         <commons-io.version>2.7</commons-io.version>
 
     </properties>
@@ -221,12 +220,6 @@
             </dependency>
 
             <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-validator</artifactId>
-                <version>${hibernate-validator}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool-all.version}</version>
@@ -345,23 +338,6 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                    <executions>
-                        <execution>
-                            <id>repackage</id>
-                            <goals>
-                                <goal>repackage</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <!-- ？ -->
-                        <mainClass>${start-class}</mainClass>
-                    </configuration>
                 </plugin>
 
             </plugins>
