@@ -1,0 +1,8 @@
+# xxl-job配置
+xxl:
+  job:
+    enable: true
+    adminAddresses: http://192.168.2.136:7009/xxl-job-admin
+    accessToken:
+    executor:
+      appname: xxljob-demo

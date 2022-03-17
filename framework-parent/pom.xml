@@ -14,7 +14,10 @@
     <groupId>org.microservice</groupId>
     <artifactId>framework-parent</artifactId>
     <packaging>pom</packaging>
-    <version>${revision}</version>
+    <!--固定版本 直接用快照好吗？ 不好 后续还是需要打标 -->
+    <version>1.0-SNAPSHOT</version>
+    <name>Microservice Framework Dependencies</name>
+    <description>Microservice Framework Dependencies</description>
 
     <properties>
         <!-- Environment Settings -->
@@ -29,8 +32,6 @@
         <springcloudalibaba.version>2.2.0.RELEASE</springcloudalibaba.version>
         <nacos-client.version>2.0.2</nacos-client.version>
         <seata.version>1.4.1</seata.version>
-
-
 
         <!--=====================================================================================================-->
 
@@ -51,6 +52,7 @@
         <version-swagger-ui>1.9.6</version-swagger-ui>
         <kryo-serializers.version>0.45</kryo-serializers.version>
 
+        <xxl-job.version>2.3.0</xxl-job.version>
 
         <!--Swagger Resources-->
         <knife4j.version>3.0.3</knife4j.version>
@@ -210,6 +212,12 @@
                 <version>${lettuce-core.version}</version>
             </dependency>
 
+            <!-- job -->
+            <dependency>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-job-core</artifactId>
+                <version>${xxl-job.version}</version>
+            </dependency>
 
             <!-- utils -->
 
