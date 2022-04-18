@@ -1,2 +1,30 @@
 server:
   port: 9000
+
+#注册中心地址
+spring:
+  application:
+    name: ${artifactId}
+  cloud:
+    nacos:
+      server-addr: 'http://117.50.174.141:8848'
+      discovery:
+        namespace: 'mac'
+      # 配置中心配置的信息
+      config:
+        server-addr: ${spring.cloud.nacos.server-addr}
+        # 获取配置超时时间 毫秒
+        timeout: 5000000
+        # 长轮询超时时间
+        config-long-poll-timeout: 5000000
+        file-extension: yaml
+        # 公共组
+        group: common
+        # 命名空间
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+#        # 共享配置
+#        shared-configs:
+#          - dataId: common-nacos.yaml
+#          - dataId: common-server.yaml
+#          - dataId: common-dubbo.yaml
+#          - dataId: common-seata.yaml
