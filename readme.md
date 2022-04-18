@@ -1,4 +1,5 @@
 # 微服务框架
+1、服务打包需先install  framework-parent 模块
 ##版本说明
 TODO
 
