@@ -13,6 +13,16 @@ import reactor.core.publisher.Mono;
 
 /**
  * 还可以 yaml 配置
+ * spring:
+ *   cloud:
+ *     gateway:
+ *       globalcors:
+ *         cors-configurations:
+ *           '[/**]':
+ *             allowedOrigins: "*"
+ *             allowedMethods: "*"
+ *             allowedHeaders: "*"
+ *             allowCredentials: true
  * @author Rao
  * @Date 2021/11/06
  **/
