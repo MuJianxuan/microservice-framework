@@ -10,7 +10,6 @@ package org.microservice.generator;
 public class GeneratorMain {
     public static void main(String[] args) {
 
-
         // 聚合层服务 中间层
         // gateway 项目
         // web 项目
