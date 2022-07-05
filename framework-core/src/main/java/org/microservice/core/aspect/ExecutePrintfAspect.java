@@ -35,7 +35,6 @@ public class ExecutePrintfAspect {
     @Around("@annotation(org.microservice.core.anno.ExecutePrintf)")
     public Object aroundHandle(ProceedingJoinPoint pjp) throws Throwable {
 
-        UUID logId = UUID.fastUUID();
         MethodSignature methodSignature = (MethodSignature) pjp.getSignature();
         Object[] pjpArgs = pjp.getArgs();
         ExecutePrintf executePrintf = methodSignature.getMethod().getAnnotation(ExecutePrintf.class);
