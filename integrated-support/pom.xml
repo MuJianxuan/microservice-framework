@@ -12,7 +12,7 @@
 
     <artifactId>integrated-support</artifactId>
     <packaging>pom</packaging>
-
+    <description>集成组件库</description>
 
     <modules>
         <module>integrated-nacos-client</module>
