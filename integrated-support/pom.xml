@@ -13,6 +13,7 @@
     <artifactId>integrated-support</artifactId>
     <packaging>pom</packaging>
 
+
     <modules>
         <module>integrated-nacos-client</module>
         <module>integrated-openfeign</module>
@@ -22,6 +23,7 @@
         <module>integrated-gateway</module>
         <module>integrated-redisson</module>
         <module>integrated-xxljob</module>
+        <module>integrated-rabbitmq</module>
     </modules>
 
 </project>
