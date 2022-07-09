@@ -10,7 +10,6 @@
         <relativePath/>
     </parent>
 
-    <groupId>org.microservice</groupId>
     <artifactId>microservice-framework</artifactId>
     <packaging>pom</packaging>
     <version>${revision}</version>
