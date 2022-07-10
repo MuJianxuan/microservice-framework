@@ -29,7 +29,7 @@
         <!-- 微服务基石  SpringBoot、SpringCloud、SpringCloudAlibaba、注册中心、配置中心、 -->
         <springboot.version>2.2.6.RELEASE</springboot.version>
         <springcloud.version>Hoxton.RELEASE</springcloud.version>
-        <springcloudalibaba.version>2.2.0.RELEASE</springcloudalibaba.version>
+        <springcloudalibaba.version>2.2.8.RELEASE</springcloudalibaba.version>
         <nacos-client.version>2.0.2</nacos-client.version>
         <seata.version>1.4.1</seata.version>
         <!--=====================================================================================================-->
@@ -99,21 +99,21 @@
             <!--支持Spring Boot 2.2.X end-->
 
             <!--Nacos 2.0.1依赖 集成 skywalking存在类强制转换错误问题。 start -->
-            <dependency>
-                <groupId>com.alibaba.nacos</groupId>
-                <artifactId>nacos-client</artifactId>
-                <version>${nacos-client.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba.nacos</groupId>
-                <artifactId>nacos-api</artifactId>
-                <version>${nacos-client.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba.nacos</groupId>
-                <artifactId>nacos-common</artifactId>
-                <version>${nacos-client.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.alibaba.nacos</groupId>-->
+<!--                <artifactId>nacos-client</artifactId>-->
+<!--                <version>${nacos-client.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>com.alibaba.nacos</groupId>-->
+<!--                <artifactId>nacos-api</artifactId>-->
+<!--                <version>${nacos-client.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>com.alibaba.nacos</groupId>-->
+<!--                <artifactId>nacos-common</artifactId>-->
+<!--                <version>${nacos-client.version}</version>-->
+<!--            </dependency>-->
             <!-- nacos end -->
 
             <!-- Knife4j start-->
