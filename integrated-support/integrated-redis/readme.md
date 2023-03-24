@@ -1,9 +1,9 @@
 ```yaml
 spring:
   redis:
-    host: 106.14.24.156
+    host: xxxxx
     port: 6380
-    password: dm_webapi
+    password: xxxx
     database: 0
     timeout: 20s  # 连接超时时间（毫秒）默认是2000ms
     lettuce:

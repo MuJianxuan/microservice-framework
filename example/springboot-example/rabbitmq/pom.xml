@@ -18,5 +18,13 @@
         <module>rabbitmq-consumer</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.microservice.rabbitmq</groupId>
+            <artifactId>integrated-rabbitmq</artifactId>
+        </dependency>
+
+    </dependencies>
+
 
 </project>

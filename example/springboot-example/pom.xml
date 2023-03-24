@@ -17,4 +17,11 @@
         <module>rabbitmq</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.microservice</groupId>
+            <artifactId>integrated-web</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

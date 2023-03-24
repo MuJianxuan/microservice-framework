@@ -16,7 +16,6 @@
         <dependency>
             <groupId>org.microservice</groupId>
             <artifactId>integrated-gateway</artifactId>
-            <version>${revision}</version>
         </dependency>
 
 
