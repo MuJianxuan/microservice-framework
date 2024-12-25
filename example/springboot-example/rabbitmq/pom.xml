@@ -6,7 +6,6 @@
         <artifactId>springboot-example</artifactId>
         <groupId>org.microservice</groupId>
         <version>${revision}</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -20,7 +19,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.microservice.rabbitmq</groupId>
+            <groupId>org.microservice</groupId>
             <artifactId>integrated-rabbitmq</artifactId>
         </dependency>
 

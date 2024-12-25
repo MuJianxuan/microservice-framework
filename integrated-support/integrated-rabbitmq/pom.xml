@@ -6,11 +6,9 @@
         <groupId>org.microservice</groupId>
         <artifactId>integrated-support</artifactId>
         <version>${revision}</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.microservice.rabbitmq</groupId>
     <artifactId>integrated-rabbitmq</artifactId>
 
     <properties>

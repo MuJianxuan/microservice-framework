@@ -70,8 +70,7 @@
     <modules>
         <module>framework-core</module>
         <module>integrated-support</module>
-<!--        <module>framework-generator</module>-->
-<!--        <module>example</module>-->
+        <module>example</module>
     </modules>
 
     <!-- 依赖定义 -->
@@ -81,12 +80,6 @@
             <dependency>
                 <groupId>org.microservice</groupId>
                 <artifactId>framework-core</artifactId>
-                <version>${revision}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.microservice</groupId>
-                <artifactId>integrated-support</artifactId>
                 <version>${revision}</version>
             </dependency>
 
@@ -353,8 +346,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
 
