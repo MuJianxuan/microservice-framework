@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @Date 2021/11/04
  **/
 @Data
-public class PageInfo implements Serializable {
+public class PageRes implements Serializable {
 
     /**
      * 总数

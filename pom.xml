@@ -10,6 +10,7 @@
         <relativePath/>
     </parent>
 
+    <groupId>org.microservice</groupId>
     <artifactId>microservice-framework</artifactId>
     <packaging>pom</packaging>
     <version>${revision}</version>
@@ -69,13 +70,85 @@
     <modules>
         <module>framework-core</module>
         <module>integrated-support</module>
-        <module>framework-generator</module>
-        <module>example</module>
+<!--        <module>framework-generator</module>-->
+<!--        <module>example</module>-->
     </modules>
 
     <!-- 依赖定义 -->
     <dependencyManagement>
         <dependencies>
+            <!-- 项目相关 ====================================================================================== -->
+            <dependency>
+                <groupId>org.microservice</groupId>
+                <artifactId>framework-core</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.microservice</groupId>
+                <artifactId>integrated-support</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.microservice</groupId>
+                <artifactId>integrated-es</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.microservice</groupId>
+                <artifactId>integrated-gateway</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.microservice</groupId>
+                <artifactId>integrated-mysql</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.microservice</groupId>
+                <artifactId>integrated-nacos-client</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.microservice</groupId>
+                <artifactId>integrated-openfeign</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.microservice</groupId>
+                <artifactId>integrated-rabbitmq</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.microservice</groupId>
+                <artifactId>integrated-redis</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.microservice</groupId>
+                <artifactId>integrated-redisson</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.microservice</groupId>
+                <artifactId>integrated-web</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.microservice</groupId>
+                <artifactId>integrated-xxljob</artifactId>
+                <version>${revision}</version>
+            </dependency>
 
             <!-- 微服务相关 ====================================================================================== -->
 

@@ -32,7 +32,7 @@ public class ApiResult<T> implements Serializable {
     /**
      * 分页信息
      */
-    private PageInfo pageInfo;
+    private PageRes pageRes;
 
     private ApiResult(Integer status, String message) {
         this.status = status;

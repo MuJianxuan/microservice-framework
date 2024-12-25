@@ -6,13 +6,11 @@
         <groupId>org.microservice</groupId>
         <artifactId>microservice-framework</artifactId>
         <version>${revision}</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>framework-generator</artifactId>
-    <version>1.0-RELEASE</version>
     <packaging>jar</packaging>
     <description> 框架代码生成器 </description>
 

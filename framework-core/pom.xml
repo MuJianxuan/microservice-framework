@@ -6,13 +6,11 @@
         <groupId>org.microservice</groupId>
         <artifactId>microservice-framework</artifactId>
         <version>${revision}</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>framework-core</artifactId>
     <packaging>jar</packaging>
-    <version>${revision}</version>
     <description> 核心依赖包 </description>
 
     <dependencies>
