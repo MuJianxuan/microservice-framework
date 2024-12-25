@@ -7,7 +7,7 @@ spring:
     name: ${artifactId}
   cloud:
     nacos:
-      server-addr: 'http://117.50.174.141:8848'
+      server-addr: 'http://127.0.0.1:8848'
       discovery:
         namespace: 'mac'
       # 配置中心配置的信息
@@ -25,7 +25,7 @@ spring:
   redis:
     host: localhost
     password: 123456
-    port: 8050
+    port: 3306
 #        # 共享配置
 #        shared-configs:
 #          - dataId: common-nacos.yaml

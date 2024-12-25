@@ -24,6 +24,7 @@
         <module>integrated-redisson</module>
         <module>integrated-xxljob</module>
         <module>integrated-rabbitmq</module>
+        <module>integrated-es</module>
     </modules>
 
 </project>

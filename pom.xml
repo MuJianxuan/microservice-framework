@@ -4,94 +4,412 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>framework-parent</artifactId>
-        <groupId>org.microservice</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.9.RELEASE</version>
         <relativePath/>
     </parent>
 
     <artifactId>microservice-framework</artifactId>
     <packaging>pom</packaging>
     <version>${revision}</version>
-    <description>microservice framework</description>
+
+    <description>Microservice Framework Dependencies</description>
 
     <properties>
         <!-- 版本控制 -->
         <revision>1.0-SNAPSHOT</revision>
+
+        <!-- Environment Settings -->
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- 微服务基石  SpringBoot、SpringCloud、SpringCloudAlibaba、注册中心、配置中心、 -->
+        <springboot.version>2.2.6.RELEASE</springboot.version>
+        <springcloud.version>Hoxton.RELEASE</springcloud.version>
+        <springcloudalibaba.version>2.2.8.RELEASE</springcloudalibaba.version>
+        <nacos-client.version>2.0.2</nacos-client.version>
+        <seata.version>1.4.1</seata.version>
+        <!--=====================================================================================================-->
+
+
+        <!-- 数据访问相关 redis、mysql、 -->
+        <mysql.version>8.0.13</mysql.version>
+        <druid.version>1.2.8</druid.version>
+        <p6spy.version>3.9.1</p6spy.version>
+        <mybatis-plus.version>3.4.0</mybatis-plus.version>
+        <mybatis-typehandlers-jsr310.version>1.0.2</mybatis-typehandlers-jsr310.version>
+        <velocity-engine-core.version>2.2</velocity-engine-core.version>
+
+        <redisson.version>3.16.4</redisson.version>
+        <redisson-data.version>3.14.0</redisson-data.version>
+        <lettuce-core.version>6.0.2.RELEASE</lettuce-core.version>
+        <easy-es-boot-starter.version>2.0.0-beta1</easy-es-boot-starter.version>
+        <elasticsearch.version>7.14.0</elasticsearch.version>
+
+        <version-swagger-ui>1.9.6</version-swagger-ui>
+        <kryo-serializers.version>0.45</kryo-serializers.version>
+
+        <xxl-job.version>2.3.0</xxl-job.version>
+
+        <!--Swagger Resources-->
+        <knife4j.version>3.0.3</knife4j.version>
+        <swagger.version>1.5.21</swagger.version>
+        <swagger-annotations.version>1.5.14</swagger-annotations.version>
+
+        <!-- Common Core -->
+        <hutool-all.version>5.5.9</hutool-all.version>
+        <fastjson.version>1.2.78</fastjson.version>
+        <lombok.version>1.18.10</lombok.version>
+        <commons-io.version>2.7</commons-io.version>
+
     </properties>
 
     <modules>
-        <module>framework-parent</module>
         <module>framework-core</module>
         <module>integrated-support</module>
         <module>framework-generator</module>
         <module>example</module>
     </modules>
 
+    <!-- 依赖定义 -->
     <dependencyManagement>
         <dependencies>
 
+            <!-- 微服务相关 ====================================================================================== -->
+
+            <!--支持Spring Boot 2.2.X start-->
             <dependency>
-                <groupId>org.microservice</groupId>
-                <artifactId>framework-core</artifactId>
-                <version>${revision}</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
             <dependency>
-                <groupId>org.microservice</groupId>
-                <artifactId>integrated-gateway</artifactId>
-                <version>${revision}</version>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${springcloudalibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
             <dependency>
-                <groupId>org.microservice</groupId>
-                <artifactId>integrated-mysql</artifactId>
-                <version>${revision}</version>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${springcloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--支持Spring Boot 2.2.X end-->
+
+            <!--Nacos 2.0.1依赖 集成 skywalking存在类强制转换错误问题。 start -->
+            <!--            <dependency>-->
+            <!--                <groupId>com.alibaba.nacos</groupId>-->
+            <!--                <artifactId>nacos-client</artifactId>-->
+            <!--                <version>${nacos-client.version}</version>-->
+            <!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>com.alibaba.nacos</groupId>-->
+            <!--                <artifactId>nacos-api</artifactId>-->
+            <!--                <version>${nacos-client.version}</version>-->
+            <!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>com.alibaba.nacos</groupId>-->
+            <!--                <artifactId>nacos-common</artifactId>-->
+            <!--                <version>${nacos-client.version}</version>-->
+            <!--            </dependency>-->
+            <!-- nacos end -->
+
+            <!-- Knife4j start-->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-micro-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.microservice</groupId>
-                <artifactId>integrated-nacos-client</artifactId>
-                <version>${revision}</version>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-models</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <!-- Knife4j end-->
+            <!-- 微服务相关 ====================================================================================== -->
+
+            <!-- 数据访问相关 ====================================================================================== -->
+            <!--  mysql -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!-- druid 连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.microservice</groupId>
-                <artifactId>integrated-openfeign</artifactId>
-                <version>${revision}</version>
+                <groupId>p6spy</groupId>
+                <artifactId>p6spy</artifactId>
+                <version>${p6spy.version}</version>
+            </dependency>
+
+            <!--mybatis-plus-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-annotation</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-extension</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-typehandlers-jsr310</artifactId>
+                <version>${mybatis-typehandlers-jsr310.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity-engine-core.version}</version>
+            </dependency>
+
+            <!-- Redis -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-data-22</artifactId>
+                <version>${redisson-data.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.lettuce</groupId>
+                <artifactId>lettuce-core</artifactId>
+                <version>${lettuce-core.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.microservice.rabbitmq</groupId>
-                <artifactId>integrated-rabbitmq</artifactId>
-                <version>${revision}</version>
+                <groupId>cn.easy-es</groupId>
+                <artifactId>easy-es-boot-starter</artifactId>
+                <version>${easy-es-boot-starter.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.microservice</groupId>
-                <artifactId>integrated-redis</artifactId>
-                <version>${revision}</version>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+
+
+            <!-- job -->
+            <dependency>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-job-core</artifactId>
+                <version>${xxl-job.version}</version>
+            </dependency>
+
+            <!-- utils -->
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.microservice</groupId>
-                <artifactId>integrated-redisson</artifactId>
-                <version>${revision}</version>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.microservice</groupId>
-                <artifactId>integrated-web</artifactId>
-                <version>${revision}</version>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.microservice</groupId>
-                <artifactId>integrated-xxljob</artifactId>
-                <version>${revision}</version>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
 
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+
+            <!-- 编译插件，指定JDK版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+
+            <!-- 打包 jar 文件时，配置 manifest 文件，加入 lib 包的 jar 依赖 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <!-- Add directory entries -->
+                                    <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                                    <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                                    <addClasspath>true</addClasspath>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- resource -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <useDefaultDelimiters>true</useDefaultDelimiters>
+                </configuration>
+
+            </plugin>
+
+            <!-- install -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+            </plugin>
+
+            <!-- clean -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+            </plugin>
+
+            <!-- ant -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+            </plugin>
+
+            <!-- dependency -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+        </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <!-- Java Document Generate -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <phase>prepare-package</phase>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+
+        <!-- 资源文件配置 -->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.yml</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.conf</include>
+                    <include>**/*.xml</include>
+                    <include>**/*.ftl</include>
+                    <include>**/*.xlsx</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <!--指定resources插件处理哪个目录下的资源文件-->
+                <directory>src/main/resources</directory>
+                <!--打开资源过滤功能-->
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>aliyun-repos</id>
+            <name>Aliyun Repository</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+            <releases><enabled>true</enabled><updatePolicy>always</updatePolicy></releases>
+            <snapshots><enabled>true</enabled><updatePolicy>always</updatePolicy></snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
 </project>
