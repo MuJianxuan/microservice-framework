@@ -12,6 +12,20 @@
     <artifactId>RocketmqExample</artifactId>
 
     <packaging>pom</packaging>
+    <modules>
+        <module>rocketmq-consumer</module>
+        <module>rocketmq-producer</module>
+    </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.microservice</groupId>
+            <artifactId>integrated-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
