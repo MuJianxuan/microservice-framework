@@ -54,6 +54,10 @@ public class ApiResult<T> implements Serializable {
         return new ApiResult<T>(HttpStatus.HTTP_OK,data);
     }
 
+    public static ApiResult<Object> success(){
+        return new ApiResult<Object>(HttpStatus.HTTP_OK,null);
+    }
+
     public static <T> ApiResult<T> fail(Integer status,String message){
         return new ApiResult<T>( status,message);
     }

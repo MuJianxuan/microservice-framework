@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.9.RELEASE</version>
+        <version>3.2.12</version>
         <relativePath/>
     </parent>
 
@@ -23,17 +23,18 @@
         <revision>1.0-SNAPSHOT</revision>
 
         <!-- Environment Settings -->
-        <java.version>1.8</java.version>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <java.version>21</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- 微服务基石  SpringBoot、SpringCloud、SpringCloudAlibaba、注册中心、配置中心、 -->
-        <springboot.version>2.2.6.RELEASE</springboot.version>
-        <springcloud.version>Hoxton.RELEASE</springcloud.version>
-        <springcloudalibaba.version>2.2.8.RELEASE</springcloudalibaba.version>
+        <springboot.version>3.2.12</springboot.version>
+        <springcloudalibaba.version>2023.0.1.0</springcloudalibaba.version>
+        <springcloud.version>2022.0.5</springcloud.version>
+
         <nacos-client.version>2.0.2</nacos-client.version>
         <seata.version>1.4.1</seata.version>
         <!--=====================================================================================================-->
@@ -66,8 +67,16 @@
         <!-- Common Core -->
         <hutool-all.version>5.5.9</hutool-all.version>
         <fastjson.version>1.2.78</fastjson.version>
-        <lombok.version>1.18.10</lombok.version>
+        <lombok.version>1.18.30</lombok.version>
         <commons-io.version>2.7</commons-io.version>
+
+        <jakarta.annotation-api.version>2.1.1</jakarta.annotation-api.version>
+        <jakarta.inject-api.v>2.0.1</jakarta.inject-api.v>
+
+        <!-- 微服务基石  SpringBoot、SpringCloud、SpringCloudAlibaba、注册中心、配置中心、 -->
+        <rocketmq-spring-boot-starter.v>2.2.0</rocketmq-spring-boot-starter.v>
+
+
 
     </properties>
 
@@ -153,7 +162,7 @@
 
             <!-- 微服务相关 ====================================================================================== -->
 
-            <!--支持Spring Boot 2.2.X start-->
+            <!--支持Spring Boot 3.2.X start-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -178,24 +187,6 @@
                 <scope>import</scope>
             </dependency>
             <!--支持Spring Boot 2.2.X end-->
-
-            <!--Nacos 2.0.1依赖 集成 skywalking存在类强制转换错误问题。 start -->
-            <!--            <dependency>-->
-            <!--                <groupId>com.alibaba.nacos</groupId>-->
-            <!--                <artifactId>nacos-client</artifactId>-->
-            <!--                <version>${nacos-client.version}</version>-->
-            <!--            </dependency>-->
-            <!--            <dependency>-->
-            <!--                <groupId>com.alibaba.nacos</groupId>-->
-            <!--                <artifactId>nacos-api</artifactId>-->
-            <!--                <version>${nacos-client.version}</version>-->
-            <!--            </dependency>-->
-            <!--            <dependency>-->
-            <!--                <groupId>com.alibaba.nacos</groupId>-->
-            <!--                <artifactId>nacos-common</artifactId>-->
-            <!--                <version>${nacos-client.version}</version>-->
-            <!--            </dependency>-->
-            <!-- nacos end -->
 
             <!-- Knife4j start-->
             <dependency>
@@ -352,9 +343,19 @@
             <dependency>
                 <groupId>org.apache.rocketmq</groupId>
                 <artifactId>rocketmq-spring-boot-starter</artifactId>
-                <version>2.2.0</version>
+                <version>${rocketmq-spring-boot-starter.v}</version>
             </dependency>
 
+            <dependency>
+                <groupId>jakarta.annotation</groupId>
+                <artifactId>jakarta.annotation-api</artifactId>
+                <version>${jakarta.annotation-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.inject</groupId>
+                <artifactId>jakarta.inject-api</artifactId>
+                <version>${jakarta.inject-api.v}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

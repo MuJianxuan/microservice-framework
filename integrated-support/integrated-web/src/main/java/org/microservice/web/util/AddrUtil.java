@@ -1,9 +1,9 @@
 package org.microservice.web.util;
 
 import cn.hutool.core.util.StrUtil;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -39,8 +39,7 @@ public class AddrUtil {
             }
         } else if (ip.length() > 15) {
             String[] ips = ip.split(",");
-            for (int index = 0; index < ips.length; index++) {
-                String strIp = ips[index];
+            for (String strIp : ips) {
                 if (!isEmptyIp(ip)) {
                     ip = strIp;
                     break;

@@ -1,7 +1,10 @@
 package org.microservice.rabbitmq.config;
 
+import com.alibaba.fastjson.JSON;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.ReturnedMessage;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
@@ -11,15 +14,13 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.annotation.Resource;
-
 /**
  * @author Rao
  * @Date 2023/3/24
  **/
 @Slf4j
 @Configuration
-public class RabbitMqProducerConfig  implements RabbitTemplate.ReturnCallback, RabbitTemplate.ConfirmCallback, InitializingBean {
+public class RabbitMqProducerConfig  implements RabbitTemplate.ReturnsCallback, RabbitTemplate.ConfirmCallback, InitializingBean {
 
 
     @Resource
@@ -58,12 +59,6 @@ public class RabbitMqProducerConfig  implements RabbitTemplate.ReturnCallback, R
     }
 
     @Override
-    public void returnedMessage(Message message, int replyCode, String replyText, String exchange, String routingKey) {
-        // 执行了此回调表示消息未路由到 实际队列中
-        log.error("[消息路由失败] 严重，message:{},replyCode:{},,replyText:{},exchange:{},routingKey:{}",message,replyCode,replyText,exchange,routingKey);
-    }
-
-    @Override
     public void afterPropertiesSet() throws Exception {
 
         // 处理消息序列化  默认的不行
@@ -73,8 +68,14 @@ public class RabbitMqProducerConfig  implements RabbitTemplate.ReturnCallback, R
         // 发送方消息确认
         rabbitTemplate.setConfirmCallback( this);
         //
-        rabbitTemplate.setReturnCallback( this);
+//        rabbitTemplate.setReturnCallback( this);
+        rabbitTemplate.setReturnsCallback(this);
 
     }
 
+    @Override
+    public void returnedMessage(ReturnedMessage returnedMessage) {
+        // 执行了此回调表示消息未路由到 实际队列中
+        log.error("[消息路由失败] 严重，message:{}", JSON.toJSONString(returnedMessage));
+    }
 }

@@ -4,7 +4,7 @@ import com.yomahub.liteflow.core.FlowExecutor;
 import org.microservice.liteflow.model.param.OrderInfoParam;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 /**
  * @author Rao

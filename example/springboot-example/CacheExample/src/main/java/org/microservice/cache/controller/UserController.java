@@ -4,7 +4,7 @@ import org.microservice.cache.entity.User;
 import org.microservice.cache.repository.UserRepository;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 /**
  * @author create 2022/8/17 by rao
