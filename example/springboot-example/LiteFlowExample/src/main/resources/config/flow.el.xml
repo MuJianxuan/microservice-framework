@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC  "liteflow" "liteflow.dtd">
+<flow>
+
+    <!--demo-->
+    <chain name="chain1">
+        THEN(
+        a, b, WHEN(c,d)
+        );
+    </chain>
+
+    <!-- 订单信息查询   -->
+    <chain name="getOrderInfo">
+        THEN(getOrderInfoCmp,orderInfoTotalPriceExecuteCmp)
+    </chain>
+
+<!--    并行计算-->
+    <chain name="parallelComputing">
+        WHEN(orderInfoTotalPriceExecuteCmp,orderInfoTotalPriceExecute2Cmp)
+    </chain>
+
+</flow>
