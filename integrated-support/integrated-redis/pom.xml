@@ -16,12 +16,6 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>org.microservice</groupId>
-            <artifactId>framework-core</artifactId>
-            <version>${revision}</version>
-        </dependency>
-
         <!-- redis -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

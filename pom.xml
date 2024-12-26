@@ -12,8 +12,9 @@
 
     <groupId>org.microservice</groupId>
     <artifactId>microservice-framework</artifactId>
-    <packaging>pom</packaging>
     <version>${revision}</version>
+
+    <packaging>pom</packaging>
 
     <description>Microservice Framework Dependencies</description>
 
@@ -23,6 +24,9 @@
 
         <!-- Environment Settings -->
         <java.version>1.8</java.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -72,6 +76,10 @@
         <module>integrated-support</module>
         <module>example</module>
     </modules>
+
+    <dependencies>
+
+    </dependencies>
 
     <!-- 依赖定义 -->
     <dependencyManagement>

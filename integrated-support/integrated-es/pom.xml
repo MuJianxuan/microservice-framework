@@ -14,12 +14,6 @@
     <description>es</description>
 
     <dependencies>
-
-        <dependency>
-            <groupId>org.microservice</groupId>
-            <artifactId>framework-core</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>cn.easy-es</groupId>
             <artifactId>easy-es-boot-starter</artifactId>

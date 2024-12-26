@@ -16,6 +16,8 @@
         <module>RabbitmqExample</module>
         <module>LiteFlowExample</module>
         <module>CacheExample</module>
+        <module>DDDExample</module>
+        <module>RocketmqExample</module>
     </modules>
 
     <dependencies>

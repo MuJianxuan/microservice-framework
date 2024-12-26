@@ -27,4 +27,11 @@
         <module>integrated-es</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.microservice</groupId>
+            <artifactId>framework-core</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>
