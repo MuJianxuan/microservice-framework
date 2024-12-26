@@ -13,8 +13,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>rabbitmq</module>
+        <module>RabbitmqExample</module>
         <module>LiteFlowExample</module>
+        <module>CacheExample</module>
     </modules>
 
     <dependencies>
