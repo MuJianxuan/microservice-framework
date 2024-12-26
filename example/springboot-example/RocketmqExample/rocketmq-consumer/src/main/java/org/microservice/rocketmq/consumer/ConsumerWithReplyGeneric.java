@@ -19,7 +19,7 @@ package org.microservice.rocketmq.consumer;
 
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQReplyListener;
-import org.example.rocketmq.consumer.domain.ProductWithPayload;
+import org.microservice.rocketmq.domain.ProductWithPayload;
 import org.springframework.stereotype.Service;
 
 /**
