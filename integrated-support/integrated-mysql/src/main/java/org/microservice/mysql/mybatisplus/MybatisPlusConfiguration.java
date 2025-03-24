@@ -1,6 +1,7 @@
 package org.microservice.mysql.mybatisplus;
 
 import com.baomidou.mybatisplus.annotation.DbType;
+import com.baomidou.mybatisplus.autoconfigure.ConfigurationCustomizer;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.BlockAttackInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.OptimisticLockerInnerInterceptor;
@@ -17,6 +18,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MybatisPlusConfiguration {
 
+
     /**
      * mybatis-plus 插件
      * @return
@@ -27,10 +29,6 @@ public class MybatisPlusConfiguration {
 
         MybatisPlusInterceptor mybatisPlusInterceptor = new MybatisPlusInterceptor();
 
-        // 添加分页插件
-        PaginationInnerInterceptor paginationInnerInterceptor = new PaginationInnerInterceptor(DbType.MYSQL);
-        mybatisPlusInterceptor.addInnerInterceptor( paginationInnerInterceptor);
-
         // 乐观锁
         mybatisPlusInterceptor.addInnerInterceptor( new OptimisticLockerInnerInterceptor());
 
@@ -40,6 +38,13 @@ public class MybatisPlusConfiguration {
         // 动态表名
 
         // 多租户
+
+        // 添加分页插件
+        PaginationInnerInterceptor paginationInnerInterceptor = new PaginationInnerInterceptor(DbType.MYSQL);
+        paginationInnerInterceptor.setMaxLimit(5000L);
+        mybatisPlusInterceptor.addInnerInterceptor( paginationInnerInterceptor);
+
+
 
 
 
